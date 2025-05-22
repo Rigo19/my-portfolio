@@ -16,13 +16,13 @@ export default function Skills() {
         <Navbar />
 
         {/*Main Container*/}
-        <div className="flex flex-col md:flex-row items-Start gap-12 px-6 py-20">
+        <div className="flex flex-col md:flex-row gap-12 px-6 py-20 max-w-7xl mx-auto w-full">
 
             {/*Left Column - Skills Section*/}
             <div className="max-w-md flex-1 text-left">
 
                 {/*Sofware skills Title*/}
-                <div className="mb-20">
+                <div className="mb-10">
                     <h1 className="text-4xl font-bold mb-4 underline decoration-blue-600 text-center">
                         Software Skills
                     </h1>
@@ -97,7 +97,6 @@ export default function Skills() {
                             <li>Helped reduce site load times in webpages by 10% by minifying scripts and images.</li>
                             <li>Increased user engagement in several clients’ sites by 15% using a responsive mobile-first UI design</li>
                             <li>Boosted SEO optimizing frontend performance, adding a module for adding keywords, meta tags, etc.</li>
-                            <li>Was part of the Agile development lifecycle, including daily standups, sprint planning, and peer code reviews.</li>
                             <li>Was part of the Agile development lifecycle, including daily standups, sprint planning, and peer code reviews.</li>
                             <li>Utilized technologies including PHP, JavaScript, Docker, Go, and MySQL, focusing on scalable, maintainable code.</li>
                         </div>
