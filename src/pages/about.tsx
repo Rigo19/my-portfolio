@@ -10,7 +10,7 @@ export default function About() {
         {/*Profile Section*/}
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 px-6 py-20">
             {/*Profile Pic*/}
-            <img src={"/aboutMeRigo.jpeg"} className="w-48 h-48 rounded-full object-cover shadow-lg">
+            <img src={"/aboutMeRigo.jpeg"} className="w-96 h-96 rounded-full object-cover shadow-lg">
             </img>
 
             {/*About Me Info*/}
