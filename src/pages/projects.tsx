@@ -8,7 +8,7 @@ export default function Projects() {
       
         <Navbar />
 
-
+        
         {/*Project Page Title*/}
         <div className="w-full flex justify-center py-20">
             <h1 className="text-5xl font-bold mb-4 underline decoration-blue-600 text-center">
