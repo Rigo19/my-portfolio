@@ -1,26 +1,106 @@
+import { useState } from 'react';
+import Image from "next/image"
 
-  
-  export default function ProjectCard() {
-    const projects = [
-      { name: 'Play4Progress', description: "Full-stack interactive web platform for 1st through 3rd grade students to practice math drills in a gamified environment.", 
-        icon: <img src={"/play4progressPic.PNG"} alt="Play4Progress" className="shadow-lg"></img> },
-    ];
-  
-    return (
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center py-2 px-6">
-        {projects.map((project, idx) => (
-        <button 
-            key={idx}
-            className="flex flex-col items-center w-full h-full px-6 py-4 bg-white text-black transition transform rounded hover:scale-105 shadow-md"
-        >
-            <div className="flex flex-col item-center text-left space-y-2">
-                <div className="items-center">{project.icon}</div>
-                <h1 className="text-lg font-bold">{project.name}</h1>
-                <p className="text-sm font-medium">{project.description}</p>
-            </div>
-        </button>
-        ))}
+export default function ProjectCard() {
+  const projects = [
+    {
+      name: 'Play4Progress',
+      description:
+        'Gamified web app for 1st–3rd graders to practice math drills through interactive badges and levels. It features level tracking, streak rewards, and a user-friendly interface built for classrooms or at-home learning.',
+      image: '/play4progressPic.PNG',
+      demoLink: 'https://hf-earlychildhood.web.app/login.html',
+      githubLink: 'https://github.com/Rigo19/play4progress',
+    },
+    // Add more projects if needed
+    {
+      name: 'Play4Progress',
+      description:
+        'Gamified web app for 1st–3rd graders to practice math drills through interactive badges and levels. It features level tracking, streak rewards, and a user-friendly interface built for classrooms or at-home learning.',
+      image: '/play4progressPic.PNG',
+      demoLink: 'https://hf-earlychildhood.web.app/login.html',
+      githubLink: 'https://github.com/Rigo19/play4progress',
+    },
+    {
+      name: 'Play4Progress',
+      description:
+        'Gamified web app for 1st–3rd graders to practice math drills through interactive badges and levels. It features level tracking, streak rewards, and a user-friendly interface built for classrooms or at-home learning.',
+      image: '/play4progressPic.PNG',
+      demoLink: 'https://hf-earlychildhood.web.app/login.html',
+      githubLink: 'https://github.com/Rigo19/play4progress',
+    },
+    {
+      name: 'Play4Progress',
+      description:
+        'Gamified web app for 1st–3rd graders to practice math drills through interactive badges and levels. It features level tracking, streak rewards, and a user-friendly interface built for classrooms or at-home learning.',
+      image: '/play4progressPic.PNG',
+      demoLink: 'https://hf-earlychildhood.web.app/login.html',
+      githubLink: 'https://github.com/Rigo19/play4progress',
+    },
+    
+  ];
+
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4 py-10">
+      {projects.map((project, idx) => (
+        <FlipCard key={idx} project={project} />
+      ))}
+    </div>
+  );
+}
+
+function FlipCard({ project }) {
+  const [flipped, setFlipped] = useState(false);
+
+  return (
+    <div
+      className="w-full max-w-xs sm:max-w-sm md:max-w-md [perspective:1000px] cursor-pointer  hover:transition transform hover:scale-105 pt-2"
+      onClick={() => setFlipped(!flipped)}
+    >
+      <div
+        className={`relative w-full min-h-[24rem] transition-transform duration-700 transform-style-preserve-3d ${
+          flipped ? 'rotate-y-180' : ''
+        }`}
+      >
+        {/* FRONT */}
+        <div className="absolute w-full min-h-[24rem] bg-white rounded-lg shadow-lg overflow-hidden backface-hidden flex flex-col py-4">
+          <Image
+            src={project.image}
+            alt={project.name}
+            width={400}
+            height={192}
+            className="object-contain w-full max-h-48"
+          />
+          <div className="flex flex-col justify-start flex-1 p-4">
+            <h1 className="text-lg font-bold text-gray-900 text-center">
+              {project.name}
+            </h1>
+            <p className="text-sm text-gray-600 text-center mt-2 leading-relaxed">
+              {project.description}
+            </p>
+          </div>
+        </div>
+
+        {/* BACK */}
+        <div className="absolute w-full min-h-[24rem] bg-white rounded-lg shadow-lg p-6 rotate-y-180 backface-hidden flex flex-col justify-center items-center space-y-4">
+          <h2 className="text-lg font-semibold text-center">{project.name}</h2>
+          <a
+            href={project.demoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-blue-600"
+          >
+            Live Demo
+          </a>
+          <a
+            href={project.githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-blue-600"
+          >
+            GitHub Repo
+          </a>
+        </div>
       </div>
-    );
-  }
-  
+    </div>
+  );
+}

@@ -4,7 +4,7 @@ import ProjectCard from "@/components/ProjectCard"
 export default function Projects() {
   return (
 
-    <div className="min-h-screen bg-black text-white">
+    <section id="projects" className="min-h-screen bg-black text-white">
       
         <Navbar />
 
@@ -19,6 +19,6 @@ export default function Projects() {
         <ProjectCard />
         
   
-    </div>
+    </section>
   )
 }

@@ -1,27 +1,21 @@
 import Navbar from "../components/Navbar"
+import Hero from "../components/hero"
+import About from "../components/about"
+import Skills from "../components/skills"
+import Projects from "../components/projects"
+import Contact from "../components/contact"
 
 export default function Home() {
   return (
+    <div className="relative min-h-screen">
 
-    <div 
-      className="min-h-screen bg-no-repeat bg-cover bg-center"
-      style={{ backgroundImage: "url('/homePage.jpg')" }}
-    >
-      
+      {/* Content */}
       <Navbar />
-
-      <div className="flex flex-col items-start justify-center h-screen pl-8">
-        <h1 className="text-5xl font-normal text-white">
-          Rigoberto
-        </h1>
-        <h1 className="text-8xl font-bold text-white">
-          Lizaola
-        </h1>
-        <h1 className="text-3xl font-thin text-white">
-          Full Stack Developer
-        </h1>
-
-      </div>
+      <Hero />
+      <section id="about"><About /></section>
+      <section id="skills"><Skills /></section>
+      <section id="projects"><Projects /></section>
+      <section id="contact"><Contact /></section>
     </div>
   )
 }

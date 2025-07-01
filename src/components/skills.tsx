@@ -1,5 +1,4 @@
 import TechIcons from "@/components/TechIcons";
-import Navbar from "../components/Navbar"
 import {
     Plane,
     Dumbbell,
@@ -11,10 +10,8 @@ import {
 export default function Skills() {
   return (
 
-    <div className="min-h-screen bg-black text-white">
+    <section id="skills" className="min-h-screen bg-black text-white scroll-smooth">
       
-        <Navbar />
-
         {/*Main Container*/}
         <div className="flex flex-col md:flex-row gap-12 px-6 py-20 max-w-7xl mx-auto w-full">
 
@@ -149,7 +146,7 @@ export default function Skills() {
                 </div>        
             </div>
         </div>
-    </div>
-  )
+    </section>
+  );
 }
 

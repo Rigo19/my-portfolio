@@ -1,36 +1,58 @@
-//importing link which is responsible for handling internal
-//navigation between pages in the app without causing ful page reloads
-//next.js prefetches the link page in the background, so when the user clicks it
-//its already loaded
-import Link from "next/link";
-//importing userRouter from Next.js
-import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
-
-
-/*the navigation bar will have no logo or name 
-            will have the:
-                Home
-                About 
-                Skills
-                Projects
-                Contact
-the current page youre in will be highlighted in the navbar */
+const navItems = [
+  { name: "Home", path: "home" },
+  { name: "About", path: "about" },
+  { name: "Skills", path: "skills" },
+  { name: "Projects", path: "projects" },
+  { name: "Contact", path: "contact" },
+];
 
 export default function Navbar() {
-    const router = useRouter();
-    const currentPath = router.pathname;
+  const [activeSection, setActiveSection] = useState("home");
 
-    return (
-        <nav className="bg-stone-800 fixed top-0 left-0 w-full z-50 shadow-md" role="navigation">
-            <ul className="flex justify-start space-x-8 text-white font-medium list-none">
-                <li><Link href="/" className={`hover:text-blue-600 cursor-pointer ${currentPath === "/" ? "underline decoration-blue-600" : ""}`}>Home</Link></li>
-                <li><Link href="/about" className={`hover:text-blue-600 cursor-pointer ${currentPath === "/about" ? "underline decoration-blue-600" : ""}`}>About</Link></li>
-                <li><Link href="/skills" className={`hover:text-blue-600 cursor-pointer ${currentPath === "/skills" ? "underline decoration-blue-600" : ""}`}>Skills</Link></li>
-                <li><Link href="/projects" className={`hover:text-blue-600 cursor-pointer ${currentPath === "/projects" ? "underline decoration-blue-600" : ""}`}>Projects</Link></li>
-                <li><Link href="/contact" className={`hover:text-blue-600 cursor-pointer ${currentPath === "/contact" ? "underline decoration-blue-600" : ""}`}>Contact</Link></li>
-                
-            </ul>
-        </nav>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.6, 
+      }
     );
+
+    navItems.forEach((item) => {
+      const el = document.getElementById(item.path);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <nav className="bg-stone-800 fixed top-0 left-0 w-full z-50 shadow-md py-4 px-8">
+      <ul className="flex space-x-8 text-white font-medium">
+        {navItems.map((item) => (
+          <li key={item.path}>
+            <a
+              href={`#${item.path}`}
+              className={`hover:text-blue-600 transition ${
+                activeSection === item.path
+                  ? "underline decoration-blue-600"
+                  : ""
+              }`}
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
 }

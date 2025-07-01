@@ -6,10 +6,6 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from '@/lib/firebase'
 import type { NextApiRequest, NextApiResponse } from "next";
 
-type Data = {
-  name: string;
-};
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
