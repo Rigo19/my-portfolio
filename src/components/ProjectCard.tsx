@@ -1,6 +1,14 @@
 import { useState } from 'react';
 import Image from "next/image"
 
+interface Project {
+  name: string;
+  description: string;
+  image: string;
+  demoLink: string;
+  githubLink: string;
+}
+
 export default function ProjectCard() {
   const projects = [
     {
@@ -32,7 +40,7 @@ export default function ProjectCard() {
   );
 }
 
-function FlipCard({ project }) {
+function FlipCard({ project }: { project: Project }) {
   const [flipped, setFlipped] = useState(false);
 
   return (
