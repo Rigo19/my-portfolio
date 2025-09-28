@@ -13,28 +13,12 @@ export default function ProjectCard() {
     },
     // Add more projects if needed
     {
-      name: 'Play4Progress',
+      name: 'Drobe',
       description:
-        'Gamified web app for 1st–3rd graders to practice math drills through interactive badges and levels. It features level tracking, streak rewards, and a user-friendly interface built for classrooms or at-home learning.',
-      image: '/play4progressPic.PNG',
-      demoLink: 'https://hf-earlychildhood.web.app/login.html',
-      githubLink: 'https://github.com/Rigo19/play4progress',
-    },
-    {
-      name: 'Play4Progress',
-      description:
-        'Gamified web app for 1st–3rd graders to practice math drills through interactive badges and levels. It features level tracking, streak rewards, and a user-friendly interface built for classrooms or at-home learning.',
-      image: '/play4progressPic.PNG',
-      demoLink: 'https://hf-earlychildhood.web.app/login.html',
-      githubLink: 'https://github.com/Rigo19/play4progress',
-    },
-    {
-      name: 'Play4Progress',
-      description:
-        'Gamified web app for 1st–3rd graders to practice math drills through interactive badges and levels. It features level tracking, streak rewards, and a user-friendly interface built for classrooms or at-home learning.',
-      image: '/play4progressPic.PNG',
-      demoLink: 'https://hf-earlychildhood.web.app/login.html',
-      githubLink: 'https://github.com/Rigo19/play4progress',
+        'We are creating an application where you have access to a virtual wardrobe. Here, you can save the different outfits and clothes you have.',
+      image: '/DrobeAppPic.PNG',
+      demoLink: 'https://drobe-ngx07en4t-rigo-s-projects.vercel.app/login.html',
+      githubLink: 'https://github.com/Rigo19/drobeApp',
     },
     
   ];

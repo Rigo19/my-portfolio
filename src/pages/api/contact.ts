@@ -28,6 +28,7 @@ export default async function handler(
         
         return res.status(200).json({ id: docRef, message: 'Message Received!'});
     } catch(error) {
+        console.error('Database error:', error);
         return res.status(500).json({ error: 'Failed to save message'});
     }
 }
