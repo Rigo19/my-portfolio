@@ -15,7 +15,7 @@ export default function ProjectCard() {
       name: 'Play4Progress',
       description:
         'Gamified web app for 1st–3rd graders to practice math drills through interactive badges and levels. It features level tracking, streak rewards, and a user-friendly interface built for classrooms or at-home learning.',
-      image: '/play4progressPic.PNG',
+      image: '/play4progressPic.jpg',
       demoLink: 'https://hf-earlychildhood.web.app/login.html',
       githubLink: 'https://github.com/Rigo19/play4progress',
     },
@@ -24,7 +24,7 @@ export default function ProjectCard() {
       name: 'Drobe',
       description:
         'We are creating an application where you have access to a virtual wardrobe. Here, you can save the different outfits and clothes you have.',
-      image: '/DrobeAppPic.PNG',
+      image: '/DrobeAppPic.jpg',
       demoLink: 'https://drobe-ngx07en4t-rigo-s-projects.vercel.app/login.html',
       githubLink: 'https://github.com/Rigo19/drobeApp',
     },
