@@ -28,6 +28,14 @@ export default function ProjectCard() {
       demoLink: 'https://drobe-ngx07en4t-rigo-s-projects.vercel.app/login.html',
       githubLink: 'https://github.com/Rigo19/drobeApp',
     },
+    {
+      name: 'JDMCARHUB',
+      description:
+        'This is a simple yet stylish online shopping platform for JDM aftermarket car parts, built using HTML, CSS, and JavaScript. The goal of this project is to provide car enthusiasts with an easy way to browse and purchase high-quality parts for their vehicles, more specifically JDM cars.',
+      image: '/jdmCarShop.jpeg',
+      demoLink: 'https://github.com/Rigo19/CarPartsShoppingPlatform',
+      githubLink: 'https://github.com/Rigo19/CarPartsShoppingPlatform',
+    },
     
   ];
 
