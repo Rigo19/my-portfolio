@@ -62,7 +62,7 @@ function FlipCard({ project }: { project: Project }) {
         }`}
       >
         {/* FRONT */}
-        <div className="absolute w-full min-h-[24rem] bg-white rounded-lg shadow-lg overflow-hidden backface-hidden flex flex-col py-4">
+        <div className="absolute w-full h-[24rem] bg-white rounded-lg shadow-lg overflow-hidden backface-hidden flex flex-col py-4">
           <Image
             src={project.image}
             alt={project.name}
@@ -70,18 +70,18 @@ function FlipCard({ project }: { project: Project }) {
             height={192}
             className="object-cover w-full max-h-48"
           />
-          <div className="flex flex-col justify-start flex-1 p-4">
+          <div className="flex flex-col justify-start flex-1 p-4 overflow-hidden">
             <h1 className="text-lg font-bold text-gray-900 text-center">
               {project.name}
             </h1>
-            <p className="text-sm text-gray-600 text-center mt-2 leading-relaxed">
+            <p className="text-sm text-gray-600 text-center mt-2 leading-relaxed line-clamp-4">
               {project.description}
             </p>
           </div>
         </div>
 
         {/* BACK */}
-        <div className="absolute w-full min-h-[24rem] bg-white rounded-lg shadow-lg p-6 rotate-y-180 backface-hidden flex flex-col justify-center items-center space-y-4">
+        <div className="absolute w-full h-[24rem] bg-white rounded-lg shadow-lg p-6 rotate-y-180 backface-hidden flex flex-col justify-center items-center space-y-4">
           <h2 className="text-lg font-semibold text-center">{project.name}</h2>
           <a
             href={project.demoLink}
