@@ -32,7 +32,7 @@ export default function ProjectCard() {
       name: 'JDMCARHUB',
       description:
         'This is a simple yet stylish online shopping platform for JDM aftermarket car parts, built using HTML, CSS, and JavaScript. The goal of this project is to provide car enthusiasts with an easy way to browse and purchase high-quality parts for their vehicles, more specifically JDM cars.',
-      image: '/jdmCarShop.jpeg',
+      image: '/jdmCarShop.jpg',
       demoLink: 'https://github.com/Rigo19/CarPartsShoppingPlatform',
       githubLink: 'https://github.com/Rigo19/CarPartsShoppingPlatform',
     },
@@ -68,7 +68,7 @@ function FlipCard({ project }: { project: Project }) {
             alt={project.name}
             width={400}
             height={192}
-            className="object-contain w-full max-h-48"
+            className="object-cover w-full max-h-48"
           />
           <div className="flex flex-col justify-start flex-1 p-4">
             <h1 className="text-lg font-bold text-gray-900 text-center">
